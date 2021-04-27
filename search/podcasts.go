@@ -31,16 +31,16 @@ func (q *API) ByFeedURL(URL string) (string, error) {
 }
 
 // ByTag returns all feeds that support the specified podcast namespace tag.
-func (q *API) ByTag() (string, err) {
+func (q *API) ByTag() (string, error) {
 	return getData(url.QueryEscape(fmt.Sprintf("podcasts/bytag?podcast-value")))
 }
 
 // Trending returns the podcasts/feeds that in the index that are trending.
-func (q *API) Trending() (string, err) {
+func (q *API) Trending() (string, error) {
 	return getData(url.QueryEscape(fmt.Sprintf("podcasts/trending")))
 }
 
 // Dead returns all feeds that have been marked dead.
-func (q *API) Dead() (string, err) {
+func (q *API) Dead() (string, error) {
 	return getData(url.QueryEscape(fmt.Sprintf("podcasts/dead")))
 }
